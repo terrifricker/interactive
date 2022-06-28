@@ -7,6 +7,9 @@
     width: 100vh;
     height: 100vh;
 }
-#dark {
-    fill: rgb(13, 13, 75);
+path {
+    cursor: pointer;
+}
+path:hover {
+    opacity: 0.5;
 }
