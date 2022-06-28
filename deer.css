@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.svg-image-container {
+    width: 100vh;
+    height: 100vh;
+}
+#dark {
+    fill: rgb(13, 13, 75);
+}
