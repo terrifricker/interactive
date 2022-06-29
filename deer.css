@@ -7,9 +7,9 @@
     width: 100vh;
     height: 100vh;
 }
-path {
+.cut {
     cursor: pointer;
 }
-path:hover {
+.cut:hover {
     opacity: 0.5;
 }
