@@ -29,10 +29,21 @@ svg {
     border: 5pt solid hotpink;
 }
 .video-link {
+    margin: 2rem;
+    font-family: cursive;
     border: 2pt solid lime;
 }
 .recipe-section {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     border: 2pt solid orange;
+}
+.recipe {
+    margin: 0.5rem;
+    
 }
 
 
