@@ -1,5 +1,5 @@
-const summerPalm = document.querySelector("svg");
-const boxContainer = document.querySelector(".box-container");
+const imageContainer = document.querySelector(".svg-image-container");
+const menuContainer = document.querySelector(".menu-container");
 
 summerPalm.addEventListener('click', showBox);
 
