@@ -9,6 +9,10 @@ function showMenu(e) {
         menuContainer.removeChild(menuContainer.firstChild)
     };
 
+    // get name of area in image that was clicked
+    let targetName = e.target.classList[0];
+    let targetNameCapitalized = targetName.charAt(0).toUpperCase() + targetName.slice(1);
+
     // create the menu div
     const newMenuDiv = document.createElement('div');
     // add default css
