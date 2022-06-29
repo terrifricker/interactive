@@ -31,7 +31,10 @@ function showMenu(e) {
 
     //create a recipe link
     let newRecipeLink = document.createElement('a');
-    
+
+    // build entire menu
+    newMenuDiv.appendChild(newVideoLink);
+    newMenuDiv.appendChild(newRecipeSecion);
 
 
     // get click coordinates
