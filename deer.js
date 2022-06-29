@@ -25,9 +25,13 @@ function showMenu(e) {
     newVideoLink.appendChild(videoLinkLabel);
     newVideoLink.classList.add("video-link");
 
+    // create recipe section
+    let newRecipeSecion = document.createElement('div');
+    newRecipeSecion.classList.add("recipe-section");
 
-
-
+    //create a recipe link
+    let newRecipeLink = document.createElement('a');
+    
 
     // create the color name
     const newParagaraph = document.createElement('p');
