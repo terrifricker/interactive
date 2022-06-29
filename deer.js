@@ -33,21 +33,8 @@ function showMenu(e) {
     let newRecipeLink = document.createElement('a');
     
 
-    // create the color name
-    const newParagaraph = document.createElement('p');
-    let color = e.target.getAttribute("class");
-    newParagaraph.innerHTML = (allColors[color]);
 
-    // create the colored box
-    const newSquare = document.createElement('div');
-    newSquare.classList.add("color-box");
-    newSquare.classList.add(color);
-
-    // append name and colored box to info box
-    newMenuDiv.appendChild(newParagaraph);
-    newMenuDiv.appendChild(newSquare);
-
-    // center menu on click coordinates
+    // get click coordinates
     let click_x = e.clientX;
     let click_y = e.clientY - 16;
   
