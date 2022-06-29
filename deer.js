@@ -39,13 +39,13 @@ function showMenu(e) {
 
     // get click coordinates
     let click_x = e.clientX;
-    let click_y = e.clientY - 16;
+    let click_y = e.clientY;
   
     // add units for css
     let click_x_in_pixels = click_x+'px';
     let click_y_in_pixels = click_y+'px';
 
-    // add click coordinates to menu css
+    // locate new menu at click coordinates
     newMenuDiv.style.left = click_x_in_pixels;
     newMenuDiv.style.top = click_y_in_pixels;
 
@@ -61,8 +61,8 @@ function showMenu(e) {
     // don't translate until rendered, using setTimeout()
     setTimeout( () => {
         // grow size
-        newMenuDiv.style.width = "var(--box-width)";
-        newMenuDiv.style.height = "var(--box-height)";
+        newMenuDiv.style.width = "var(--menu-width)";
+        newMenuDiv.style.height = "var(--menu-height)";
 
         // translate location
         newMenuDiv.style.transform = 'translate('+translate_x+'px, '+translate_y+'px)';
