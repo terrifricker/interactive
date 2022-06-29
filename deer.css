@@ -3,10 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
-.svg-image-container {
-    width: 100vh;
+body {
+    width: 100vw;
     height: 100vh;
 }
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+svg {
+    height: 80vh;
+}
+.svg-image-container {
+    border: 1pt solid black;
+}
+.menu-container {
+    border: 10pt solid dodgerblue;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 5pt solid hotpink;
+}
+.video-link {
+    border: 2pt solid lime;
+}
+.recipe-section {
+    border: 2pt solid orange;
+}
+
+
+
+
+
+
+
 .cut {
     cursor: pointer;
 }
