@@ -1,19 +1,3 @@
-/* This javascript makes an information box that shows the color
-of the area clicked on the svg. */
-
-const allColors = {
-    st0: "English Vermillion",
-    st1: "Jasper Orange",
-    st2: "Royal Orange",
-    st3: "Orange-Yellow",
-    st4: "Middle Green Yellow",
-    st5: "Dollar Bill",
-    st6: "Green Sheen",
-    st7: "Jelly Bean Blue",
-    st8: "Deep Space Sparkle",
-    st9: "Bistre"
-}
-
 const summerPalm = document.querySelector("svg");
 const boxContainer = document.querySelector(".box-container");
 
