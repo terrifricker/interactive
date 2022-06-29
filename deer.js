@@ -14,8 +14,7 @@ function showMenu(e) {
     let targetNameCapitalized = targetName.charAt(0).toUpperCase() + targetName.slice(1);
 
     // create the menu div
-    const newMenuDiv = document.createElement('div');
-    // add default css
+    let newMenuDiv = document.createElement('div');
     newMenuDiv.classList.add("menu");
 
     // create the color name
