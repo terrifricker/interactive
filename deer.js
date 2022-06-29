@@ -4,6 +4,7 @@ const menuContainer = document.querySelector(".menu-container");
 imageContainer.addEventListener('click', showMenu);
 
 function showMenu(e) {
+
     // if there is already a menu, remove it
     if (menuContainer.firstChild) {
         menuContainer.removeChild(menuContainer.firstChild)
@@ -16,6 +17,17 @@ function showMenu(e) {
     // create the menu div
     let newMenuDiv = document.createElement('div');
     newMenuDiv.classList.add("menu");
+
+    // create video link
+    let newVideoLink = document.createElement('a');
+    newVideoLink.href = `https://fromfieldtoplate.com/video/${targetName}`;
+    let videoLinkLabel = document.createTextNode(`${targetNameCapitalized} Video`);
+    newVideoLink.appendChild(videoLinkLabel);
+    newVideoLink.classList.add("video-link");
+
+
+
+
 
     // create the color name
     const newParagaraph = document.createElement('p');
