@@ -1,9 +1,9 @@
 const imageContainer = document.querySelector(".svg-image-container");
 const menuContainer = document.querySelector(".menu-container");
 
-summerPalm.addEventListener('click', showBox);
+imageContainer.addEventListener('click', showMenu);
 
-function showBox(e) {
+function showMenu(e) {
     // if there is already a box, remove it
     if (boxContainer.firstChild) {
         boxContainer.removeChild(boxContainer.firstChild)
