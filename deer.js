@@ -1,63 +1,56 @@
-/* This javascript makes an information box that shows the color
-of the area clicked on the svg. */
+const imageContainer = document.querySelector(".svg-image-container");
+const menuContainer = document.querySelector(".menu-container");
 
-const allColors = {
-    st0: "English Vermillion",
-    st1: "Jasper Orange",
-    st2: "Royal Orange",
-    st3: "Orange-Yellow",
-    st4: "Middle Green Yellow",
-    st5: "Dollar Bill",
-    st6: "Green Sheen",
-    st7: "Jelly Bean Blue",
-    st8: "Deep Space Sparkle",
-    st9: "Bistre"
-}
+imageContainer.addEventListener('click', showMenu);
 
-const summerPalm = document.querySelector("svg");
-const boxContainer = document.querySelector(".box-container");
+function showMenu(e) {
 
-summerPalm.addEventListener('click', showBox);
-
-function showBox(e) {
-    // if there is already a box, remove it
-    if (boxContainer.firstChild) {
-        boxContainer.removeChild(boxContainer.firstChild)
+    // if there is already a menu, remove it
+    if (menuContainer.firstChild) {
+        menuContainer.removeChild(menuContainer.firstChild)
     };
 
-    // create the info box container
-    const newBoxDiv = document.createElement('div');
-    // add default css
-    newBoxDiv.classList.add("info-box");
+    // get name of area in image that was clicked
+    let targetName = e.target.classList[0];
+    let targetNameCapitalized = targetName.charAt(0).toUpperCase() + targetName.slice(1);
 
-    // create the color name
-    const newParagaraph = document.createElement('p');
-    let color = e.target.getAttribute("class");
-    newParagaraph.innerHTML = (allColors[color]);
+    // create the menu div
+    let newMenuDiv = document.createElement('div');
+    newMenuDiv.classList.add("menu");
 
-    // create the colored box
-    const newSquare = document.createElement('div');
-    newSquare.classList.add("color-box");
-    newSquare.classList.add(color);
+    // create video link
+    let newVideoLink = document.createElement('a');
+    newVideoLink.href = `https://fromfieldtoplate.com/video/${targetName}`;
+    let videoLinkLabel = document.createTextNode(`${targetNameCapitalized} Video`);
+    newVideoLink.appendChild(videoLinkLabel);
+    newVideoLink.classList.add("video-link");
 
-    // append name and colored box to info box
-    newBoxDiv.appendChild(newParagaraph);
-    newBoxDiv.appendChild(newSquare);
+    // create recipe section
+    let newRecipeSecion = document.createElement('div');
+    newRecipeSecion.classList.add("recipe-section");
 
-    // center info box on click coordinates
+    //create a recipe link
+    let newRecipeLink = document.createElement('a');
+
+    // build entire menu
+    newMenuDiv.appendChild(newVideoLink);
+    newMenuDiv.appendChild(newRecipeSecion);
+
+
+    // get click coordinates
     let click_x = e.clientX;
-    let click_y = e.clientY - 16;
+    let click_y = e.clientY;
   
     // add units for css
     let click_x_in_pixels = click_x+'px';
     let click_y_in_pixels = click_y+'px';
 
-    // add click coordinates to info box css
-    newBoxDiv.style.left = click_x_in_pixels;
-    newBoxDiv.style.top = click_y_in_pixels;
+    // locate new menu at click coordinates
+    newMenuDiv.style.left = click_x_in_pixels;
+    newMenuDiv.style.top = click_y_in_pixels;
 
-    // add the new info box to the DOM
-    boxContainer.appendChild(newBoxDiv);
+    // add the new menu to the DOM
+    menuContainer.appendChild(newMenuDiv);
 
     // calculate translation to 2/3 window over, 1/2 window down
     let window_width = window.innerWidth;
@@ -68,14 +61,14 @@ function showBox(e) {
     // don't translate until rendered, using setTimeout()
     setTimeout( () => {
         // grow size
-        newBoxDiv.style.width = "var(--box-width)";
-        newBoxDiv.style.height = "var(--box-height)";
+        newMenuDiv.style.width = "var(--menu-width)";
+        newMenuDiv.style.height = "var(--menu-height)";
 
         // translate location
-        newBoxDiv.style.transform = 'translate('+translate_x+'px, '+translate_y+'px)';
+        newMenuDiv.style.transform = 'translate('+translate_x+'px, '+translate_y+'px)';
   
         // set final opacity to 1
-        newBoxDiv.style.opacity = '1';
+        newMenuDiv.style.opacity = '1';
     }, 10);
 }
 
