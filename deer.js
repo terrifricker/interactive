@@ -1,6 +1,19 @@
 const imageContainer = document.querySelector(".svg-image-container");
 const menuContainer = document.querySelector(".menu-container");
 
+setSize();
+window.addEventListener('resize', setSize);
+
+function setSize() {
+    // set the size of the menuContainer equal to the size of the imageContainer
+    width = imageContainer.getBoundingClientRect()['width'].toString();
+    height = imageContainer.getBoundingClientRect()['height'].toString();
+    console.log(width, height);
+    menuContainer.style.width = `${width}px`;
+    menuContainer.style.height = `${height}px`;
+}
+
+
 imageContainer.addEventListener('click', showMenu);
 
 function showMenu(e) {
