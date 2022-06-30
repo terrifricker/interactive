@@ -1,11 +1,24 @@
 const imageContainer = document.querySelector(".svg-image-container");
 const menuContainer = document.querySelector(".menu-container");
 
+setSize();
+window.addEventListener('resize', setSize);
+
+function setSize() {
+    // set the size of the menuContainer equal to the size of the imageContainer
+    width = imageContainer.getBoundingClientRect()['width'].toString();
+    height = imageContainer.getBoundingClientRect()['height'].toString();
+    console.log(width, height);
+    menuContainer.style.width = `${width}px`;
+    menuContainer.style.height = `${height}px`;
+}
+
+
 imageContainer.addEventListener('click', showMenu);
 
 function showMenu(e) {
 
-    // if there is already a menu, remove it
+  // if there is already a menu, remove it
     if (menuContainer.firstChild) {
         menuContainer.removeChild(menuContainer.firstChild)
     };
@@ -55,8 +68,8 @@ function showMenu(e) {
     // calculate translation to 2/3 window over, 1/2 window down
     let window_width = window.innerWidth;
     let window_height = window.innerHeight;
-    let translate_x = window_width * 2/3 - click_x - 80;
-    let translate_y = window_height * 1/2 - click_y - 128;
+    let translate_x = window_width * 2/3 - click_x;
+    let translate_y = window_height * 1/2 - click_y;
   
     // don't translate until rendered, using setTimeout()
     setTimeout( () => {
