@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --menu-width: 200px;
+    --menu-height: 300px;
+}
 body {
     width: 100vw;
     height: 100vh;
@@ -15,15 +19,12 @@ main {
     align-items: center;
 }
 svg {
+    width: 50vw;
     height: 80vh;
 }
-.svg-image-container {
-    border: 1pt solid black;
-}
-.menu-container {
-    border: 10pt solid dodgerblue;
-}
 .menu {
+    opacity: 0;
+    transition: all 500ms ease-out;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -34,6 +35,7 @@ svg {
 .video-link {
     margin: 2rem;
     font-family: cursive;
+    font-size: 1em;
     border: 2pt solid lime;
 }
 .recipe-section {

@@ -51,8 +51,8 @@ function showMenu(e) {
 
 
     // get click coordinates
-    let click_x = e.clientX;
-    let click_y = e.clientY;
+    let click_x = e.clientX - 100;
+    let click_y = e.clientY -150;
   
     // add units for css
     let click_x_in_pixels = click_x+'px';
@@ -68,8 +68,8 @@ function showMenu(e) {
     // calculate translation to 2/3 window over, 1/2 window down
     let window_width = window.innerWidth;
     let window_height = window.innerHeight;
-    let translate_x = window_width * 2/3 - click_x;
-    let translate_y = window_height * 1/2 - click_y;
+    let translate_x = window_width * 2/3 - click_x - 100;
+    let translate_y = window_height * 1/2 - click_y - 150;
   
     // don't translate until rendered, using setTimeout()
     setTimeout( () => {
