@@ -18,7 +18,7 @@ imageContainer.addEventListener('click', showMenu);
 
 function showMenu(e) {
 
-    // if there is already a menu, remove it
+  // if there is already a menu, remove it
     if (menuContainer.firstChild) {
         menuContainer.removeChild(menuContainer.firstChild)
     };
@@ -68,8 +68,8 @@ function showMenu(e) {
     // calculate translation to 2/3 window over, 1/2 window down
     let window_width = window.innerWidth;
     let window_height = window.innerHeight;
-    let translate_x = window_width * 2/3 - click_x - 80;
-    let translate_y = window_height * 1/2 - click_y - 128;
+    let translate_x = window_width * 2/3 - click_x;
+    let translate_y = window_height * 1/2 - click_y;
   
     // don't translate until rendered, using setTimeout()
     setTimeout( () => {
